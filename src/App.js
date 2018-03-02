@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import './App.css';
+
 import router from './router'
 
 
@@ -7,9 +10,6 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      //first view
-      loanType: 'Home Purchase',
-      propertyType: 'Single Family Home',
       //second view
       city: '',
       //third view
@@ -34,9 +34,6 @@ class App extends Component {
       lastName: '',
       email: ''
     }
-    //first view 
-    this.handleChangeLoanType = this.handleChangeLoanType.bind(this);
-    this.handleChangePropertyType = this.handleChangePropertyType.bind(this);
     //second view
     this.handleChangeCity = this.handleChangeCity.bind(this);
     //third view
@@ -143,14 +140,14 @@ class App extends Component {
   render() {
     return (
       <div>
-    
-        { 
-          router( this.state.loanType, this.state.propertyType, this.handleChangeLoanType, this.handleChangePropertyType, this.handleChangePropertyToBeUsedOn, this.state.propToBeUsedOn, this.state.city, this.handleChangeCity, this.handleChangeFoundFalse, this.handleChangeFoundTrue, this.state.found, this.handleChangeRealEstateAgentTrue, this.handleChangeRealEstateAgentFalse, this.state.realEstateAgent, this.handleChangeUpdateDownPayment, this.state.downPayment, this.handleChangeUpdateCost, this.state.cost, this.state.credit, this.handleChangeCreditE, this.handleChangeCreditG,this.handleChangeCreditF, this.handleChangeCreditP, this.state.history, this.handleChangeUpdateHistory, this.state.addressOne, this.state.addressTwo, this.state.addressThree, this.handleChangeAddressOne, this.handleChangeAddressTwo, this.handleChangeAddressThree, this.handleChangeFirstName, this.handleChangeLastName, this.handleChangeEmail, this.state.firstName, this.state.lastName, this.state.email ) 
-        }
-
+        { router }
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state){
+  return state;
+}
+
+export default connect(mapStateToProps)(App);

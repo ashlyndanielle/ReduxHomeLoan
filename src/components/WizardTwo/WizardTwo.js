@@ -1,5 +1,8 @@
 import React,  { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { updateCity } from '../../ducks/reducer';
 
 class WizardTwo extends Component {
     render(){
@@ -9,7 +12,7 @@ class WizardTwo extends Component {
             
                 <p>In what city will the property be located?</p><br />
                     
-                        <input placeholder="city name" type="text" onChange={this.props.updateCity}/>
+                        <input placeholder="city name" type="text" onChange={ e => this.props.updateCity(e.target.value) }/>
                 
                     <Link to="/wThree"><button className="wTwo-btn"> Next </button></Link>
                 </div>
@@ -18,4 +21,4 @@ class WizardTwo extends Component {
     }
 }
 
-export default WizardTwo;
+export default connect(null, { updateCity })(WizardTwo);
