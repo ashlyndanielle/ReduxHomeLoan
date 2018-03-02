@@ -149,5 +149,23 @@ export function updateFoundHome(value) {
     payload: value
   }
 }
+export function updateRealEstateAgent(value) {
+  return {
+    type: UPDATE_REAL_ESTATE_AGENT,
+    payload: value
+  }
+}
+export function updateCost(amount) {
+  return {
+    type: UPDATE_COST,
+    payload: amount
+  }
+}
+export function updateDownPayment(amount) {
+  return {
+    type: UPDATE_DOWN_PAYMENT,
+    payload: amount
+  }
+}
 
 export default reducer;
