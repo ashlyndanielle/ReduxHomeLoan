@@ -48,7 +48,7 @@ const UPDATE_LOAN_TYPE = 'UPDATE_LOAN_TYPE',
       // ------ 7 ------ //
       UPDATE_CREDIT = 'UPDATE_CREDIT',
       // ------ 8 ------ //
-      UPDATE_HISTORY = 'UPDATE_HISTORT',
+      UPDATE_HISTORY = 'UPDATE_HISTORY',
       // ------ 9 ------ //
       UPDATE_ADDRESS_ONE = 'UPDATE_ADDRESS_ONE',
       UPDATE_ADDRESS_TWO = 'UPDATE_ADDRESS_TWO',
@@ -165,6 +165,54 @@ export function updateDownPayment(amount) {
   return {
     type: UPDATE_DOWN_PAYMENT,
     payload: amount
+  }
+}
+export function updateCredit(value) {
+  return {
+    type: UPDATE_CREDIT,
+    payload: value
+  }
+}
+export function updateHistory(history) {
+  return {
+    type: UPDATE_HISTORY,
+    payload: history
+  }
+}
+export function updateAddressOne(address) {
+  return {
+    type: UPDATE_ADDRESS_ONE,
+    payload: address
+  }
+}
+export function updateAddressTwo(address) {
+  return {
+    type: UPDATE_ADDRESS_TWO,
+    payload: address
+  }
+}
+export function updateAddressThree(address) {
+  return {
+    type: UPDATE_ADDRESS_THREE,
+    payload: address
+  }
+}
+export function updateFirstName(name) {
+  return {
+    type: UPDATE_FIRST_NAME,
+    payload: name
+  }
+}
+export function updateLastName(name) {
+  return {
+    type: UPDATE_LAST_NAME,
+    payload: name
+  }
+}
+export function updateEmail(email) {
+  return {
+    type: UPDATE_EMAIL,
+    payload: email
   }
 }
 
